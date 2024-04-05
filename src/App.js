@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+
+const Box = (props) => {
+  const { className, boxName } = props;
+  return <div className={className}>{boxName}</div>;
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="row">
+        <div className="col mt-4 p-4 shadow-lg">
+          <h1 className="heading">Boxes</h1>
+          <div className="box">
+            <Box className="box1 box m-3" boxName="Small" />
+            <Box className="box2 box m-3" boxName="Medium" />
+            <Box className="box3 box m-3" boxName="Large" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
